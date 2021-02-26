@@ -35,7 +35,7 @@ android {
 
     defaultConfig {
         applicationId 'org.wikipedia'
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 50343
         testApplicationId 'org.wikipedia.test'
@@ -73,7 +73,7 @@ android {
 
     signingConfigs {
         prod {
-            setSigningConfigKey(prod, PROD_PROPS)
+            setSigningConfigKey(prod, REPO_PROPS)
         }
         debug {
             setSigningConfigKey(debug, REPO_PROPS)
@@ -151,6 +151,9 @@ apply from: '../gradle/src/checkstyle.gradle'
 apply from: '../gradle/src/ktlint.gradle'
 
 dependencies {
+
+    //UserzoomSDK
+    implementation 'com.userzoom:sdk:+'
 
     // To keep the Maven Central dependencies up-to-date
     // use http://gradleplease.appspot.com/ or http://search.maven.org/.

@@ -29,6 +29,8 @@ import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.FixedDrawerLayout;
 import androidx.preference.PreferenceManager;
 
+import com.userzoom.sdk.facade.UserzoomSDK;
+
 import org.apache.commons.lang3.StringUtils;
 import org.wikipedia.Constants;
 import org.wikipedia.Constants.InvokeSource;
@@ -231,6 +233,9 @@ public class PageActivity extends BaseActivity implements PageFragment.Callback,
             // then we must have been launched with an Intent, so... handle it!
             handleIntent(getIntent());
         }
+
+        //UserzoomSDK
+        UserzoomSDK.show(this, "UZ_TAG_SPECIFIC");
     }
 
     @OnClick(R.id.page_toolbar_button_tabs)

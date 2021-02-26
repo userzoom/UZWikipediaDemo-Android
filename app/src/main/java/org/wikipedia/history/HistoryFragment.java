@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.userzoom.sdk.facade.UserzoomSDK;
 
 import org.apache.commons.lang3.StringUtils;
 import org.wikipedia.BackPressedHandler;
@@ -133,6 +134,9 @@ public class HistoryFragment extends Fragment implements BackPressedHandler {
     public void onResume() {
         super.onResume();
         reloadHistoryItems();
+
+        //UserzoomSDK
+        UserzoomSDK.blockRecord(true);
     }
 
     @Override
@@ -141,6 +145,9 @@ public class HistoryFragment extends Fragment implements BackPressedHandler {
         if (actionMode != null) {
             actionMode.finish();
         }
+
+        //UserzoomSDK
+        UserzoomSDK.blockRecord(false);
     }
 
     @Override

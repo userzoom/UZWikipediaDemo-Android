@@ -18,5 +18,14 @@ allprojects {
         maven { url "https://jitpack.io" }
         google()
         mavenLocal()
+
+        maven {
+            name = "GitHubPackages"
+            url = uri(System.getenv("GPR_PACKAGE_URL"))
+            credentials {
+                username = System.getenv("GPR_USER")
+                password = System.getenv("GPR_API_KEY")
+            }
+        }
     }
 }

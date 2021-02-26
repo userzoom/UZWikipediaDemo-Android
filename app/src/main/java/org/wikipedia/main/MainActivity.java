@@ -15,6 +15,8 @@ import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import com.userzoom.sdk.facade.UserzoomSDK;
+
 import org.wikipedia.Constants;
 import org.wikipedia.R;
 import org.wikipedia.WikipediaApp;
@@ -76,6 +78,9 @@ public class MainActivity extends SingleFragmentActivity<MainFragment> implement
         }
 
         getToolbar().setNavigationIcon(null);
+
+        //UserzoomSDK
+        UserzoomSDK.init(this,"UZ_TAG_INIT");
     }
 
     @Override
