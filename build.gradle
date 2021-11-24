@@ -19,5 +19,7 @@ allprojects {
         google()
         mavenCentral()
         mavenLocal()
+
+        maven { url "https://raw.githubusercontent.com/userzoom/UserZoomSDK-Android/master" }
     }
 }

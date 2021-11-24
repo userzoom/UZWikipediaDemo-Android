@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.userzoom.sdk.facade.UserzoomSDK
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -94,11 +95,13 @@ class HistoryFragment : Fragment(), BackPressedHandler {
 
     override fun onResume() {
         super.onResume()
+        UserzoomSDK.blockRecord(true)
         reloadHistoryItems()
     }
 
     override fun onPause() {
         super.onPause()
+        UserzoomSDK.blockRecord(false)
         actionMode?.finish()
     }
 

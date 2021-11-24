@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.view.*
 import androidx.preference.PreferenceManager
+import com.userzoom.sdk.facade.UserzoomSDK
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.functions.Consumer
 import org.wikipedia.Constants
@@ -160,6 +161,8 @@ class PageActivity : BaseActivity(), PageFragment.Callback, LinkPreviewDialog.Ca
             // then we must have been launched with an Intent, so... handle it!
             handleIntent(intent)
         }
+        //UserzoomSDK
+        UserzoomSDK.show(this, "UZ_TAG_SPECIFIC")
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {

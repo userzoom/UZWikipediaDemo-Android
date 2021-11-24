@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.view.ActionMode
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.userzoom.sdk.facade.UserzoomSDK
 import org.wikipedia.Constants
 import org.wikipedia.R
 import org.wikipedia.activity.SingleFragmentActivity
@@ -46,6 +47,9 @@ class MainActivity : SingleFragmentActivity<MainFragment>(), MainFragment.Callba
         supportActionBar?.title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         binding.mainToolbar.navigationIcon = null
+
+        //UserzoomSDK
+        UserzoomSDK.init(this, "UZ_TAG_INIT")
     }
 
     override fun onResume() {
